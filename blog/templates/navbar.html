@@ -1,0 +1,36 @@
+<head>
+  {% load static %}
+  {% load blog_tags %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/css/navbar.css' %}">
+</head>
+  <body>
+    <div class="menu">
+      <a href="{% url 'home' %}" class="label">Кванториум <img src="{% static 'img/label.ico' %}" width="32" height="32"></a>
+      {% if request.user.is_authenticated %}
+      <div class="links">
+        <a href="{% url 'post_list' type='task' %}"><div class="menulink">Задания</div></a>
+        <a href="{% url 'post_list' type='news' %}"><div class="menulink">Новости</div></a>
+        <a href="{% url 'dialogs' %}"><div class="menulink">Сообщения</div></a>
+        <a href="{% url 'post_list' type='forum' %}"><div class="menulink">Форум</div></a>
+      </div>
+      {% if request.user.profile.type == 'teacher' or 'manage' or 'worker' %}
+      <div class="links">
+        <a href="{% url 'studentgroups' %}"><div class="menulink">Учебные группы</div></a>
+        <a href=""><div class="menulink">Проверка заданий</div></a>
+      </div>
+      {% endif %}
+      <div class="links"></div>
+      {% else %}
+      <a href="{% url 'register' %}"><div class="register">Зарегестрироваться</div></a>
+      <a href="{% url 'login_page' %}"><div class="register">Войти</div></a>
+      {% endif %}
+      <div class="footer">@Yar 2021</div>
+    </div>
+    <div class="helper">
+      {% if request.user.is_authenticated %}
+      <div class="helperusername"><a href="{% url 'profile' user=request.user %}" class="helperusername"><img class="avatar" src="{{ request.user.profile.icon.url }}" width="48" height="48" alt="">  {{user}}</a></div> 
+      <div class="chats"></div>
+      <a href="{% url 'logout_page' %}"><div class="logout">Выход</div></a>
+      {% endif %}
+    </div>
+  </body>

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+<html>
+	{% block content %}
+	<head>
+		{% load static %}
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/css/post_list.css' %}">
+	</head>
+	<body>
+		<div class="midd dark btn-secondary"></div>
+		<div class="midd">
+			<button type="button" class="btn-primary-1" data-bs-toggle="modal" data-bs-target="#exampleModal1" onclick="openForm()">Создать задание</button>
+				{% for post in posts %}
+				<a href="{{ post.get_absolute_url }}" class="posts-links">
+						<div class="mar">  
+								<p class="p-item-0"><b>{{ post.title }}</b></p>
+									<p class="p-item-2">{{ post.body|truncatewords:70 }}</p>
+									<p class="p-item-1">{{ post.publish }} (по МСК)<br> Автор: {{ post.author }}</p>
+								<p class="ins">Нажмите для просмотра!</p>
+						</div>
+					</a>
+				{% endfor %}
+		
+			<footer>
+				{% include "../post/pagination.html" with page=posts %}
+			</footer>
+		</div>
+	</body>
+
+	<!-- Modal -->
+	<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<h5 class="modal-title" id="exampleModalLabel">Создание нового задания</h5>
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="addPostForm" method="post">
+					{% for field in form %}
+						{% csrf_token %}
+						<div class="form-group">
+							{% if field.errors %}
+								<div class="alert-danger">
+									{{ field.errors }}
+								</div>
+							{% endif %}
+							{{ field.label }}
+							{{ field }}
+						</div>
+					{% endfor %}
+				</form>
+			</div>
+			<div class="modal-footer">
+			  <!--<button type="button" class="btn-secondary" data-bs-dismiss="modal">Закрыть</button>-->
+			  <button form="addPostForm" type="submit" class="btn-primary">Создать</button>
+			</div>
+	  </div>
+
+	<script>
+		    const button_open = document.querySelector('.btn-primary-1');
+            const button_close = document.querySelector('.btn-secondary');
+            const form = document.querySelector('#addPostForm');
+            const popup = document.querySelector('.modal');
+			const dark = document.querySelector('.dark');
+            
+            function openForm() 
+            {
+              form.style.display = 'block';
+              popup.style.display = 'block';
+			  dark.style.display = 'block';
+            };
+
+            button_close.addEventListener('click', () => {
+              form.style.display = 'none';
+              popup.style.display = 'none';
+			  dark.style.display = 'none';
+            });
+	</script>
+	{% endblock %}
+</html>

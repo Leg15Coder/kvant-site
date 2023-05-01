@@ -1,0 +1,21 @@
+<!DOCTYPE html>  
+
+<html>  
+<head>  
+ {% load static %}  
+ {% load blog_tags %}
+ <link rel="shortcut icon" href="{% static 'img/label.ico' %}" type="image/x-icon">
+ <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+ <script defer src="{% static 'js/bootstrap/bootstrap.bundle.js' %}"></script> -->
+ <title>Кванториум Ярославль</title>
+</head>  
+<body style="overflow: auto;">  
+  {% include 'navbar.html' %}
+  <div style="width: 55vw; margin-left: calc(20vw); top:0;">
+  {% block content %}
+  {% include 'descr.html' %}
+  {% endblock %}
+  </div>
+</body>  
+</html>

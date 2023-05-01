@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link href="{% static 'css/css/auth.css' %}" rel="stylesheet">
+</head>
+<div class="body">
+    <div class="authCont">
+        <form id="add_form" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="field">
+                    {{field.label}}
+                    {{field}}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                        <ul class="error">
+                            {{error}} <br>
+                        </ul>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button form="add_form" type="submit">Войти</button>
+        </form>
+    </div>
+    </div>
+{% endblock %}

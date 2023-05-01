@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="ru">
+{% block content %}
+    <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/css/post_list.css' %}">
+    <title>Кванториум</title>
+    </head>
+    <body>
+    <div class="mar">
+        <p class="p-item-0">{{ post.title }}</p>
+        {% for image in Images %} <img src="{{image.image_data_link.url}}" height="500px" width="500px"><br> {% endfor %}
+        {% for document in Documents %} <a href="{{ document.document_data_link.url }}" download>Скачать прикреплённый файл</a><br> {% endfor %}
+        <p class="p-item-2">{{ post.body|linebreaks }}</p>
+        {% if post.url != Null %}<div class="videourl-div"><iframe src="{{ post.url }}" width="90%" height="100%"></iframe></div>{% endif %}
+        <p class="p-item-1">Опубликовано {{ post.publish }} (МСК)</p>
+        <a href="/"><p class="backlink">Назад</p></a>
+    </div>   
+    Комментарии      
+    <form enctype="multipart/form-data" id="addCommentForm" method="post">{% csrf_token %} {{commentform}} <button form="addCommentForm" type="submit" class="btn-primary">Отправить</button> </form>
+
+</body>
+{% endblock %}  
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE  HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+{% extends 'base.html' %}
+
+<html> 
+{% block content %} 
+<head>  
+ {% load static %}  
+ <link rel="shortcut icon" href="{% static 'img/label.ico' %}" type="image/x-icon">
+ <link href="{% static 'css/css/descr.css' %}" rel="stylesheet">  
+ <title>Кванториум Ярославль</title>
+</head>  
+<body>  
+    <header>
+        <div class="header">
+            <a href="{% url 'home' %}"><p class="header1">Кванториум</p></a>
+        </div>
+    </header>
+    <div class="cont">
+        <div class="kvantumy">
+            <p style="font-size: 32px;">направления - квантумы</p>
+            <a href="{% url 'info' type='promrobo' %}"><div class="promrobo"></div></a>
+            <a href="{% url 'info' type='it' %}"><div class="it"></div></a>
+            <a href="{% url 'info' type='vr' %}"><div class="vr"></div></a>
+            <a href="{% url 'info' type='promdesign' %}"><div class="promdesign"></div></a>
+            <a href="{% url 'info' type='geo' %}"><div class="geo"></div></a>
+            <a href="{% url 'info' type='haiteg' %}"><div class="haiteg"></div></a>
+            <a href="{% url 'info' type='imedia' %}"><div class="imedia"></div></a>
+        </div>
+        {% block test %}
+        {% include 'info/info.html' %}
+        {% endblock test %}
+        <br>
+    </div>
+</body>  
+{% endblock content %}
+</html>

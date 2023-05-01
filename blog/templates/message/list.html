@@ -1,0 +1,84 @@
+<!DOCTYPE html>  
+{% extends 'base.html' %}
+<html>  
+  {% block content %}
+<head>  
+ {% load static %}  
+ <link rel="shortcut icon" href="{% static 'img/label.ico' %}" type="image/x-icon">
+ <link href="{% static 'css/css/message.css' %}" rel="stylesheet">  
+ <title>Кванториум Ярославль</title>
+</head>  
+<body>  
+  <div class="midd dark btn-secondary"></div>
+    <div class="panel">
+      {% load tz %}
+      {% load blog_tags %}
+      {% if chats.count == 0 %}
+          <div class="panel panel-body">Нет ни одного начатого диалога</div>
+      {% endif %}
+      <button type="button" class="btn-primary-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" onclick="openForm()">Создать Чат</button>
+      {% for chat in chats %}
+              {% with last_message=chat.message_set.last %}
+                  {% get_companion user chat as companion %}
+                  <a class="list-group-item {% if companion == last_message.author and not last_message.is_readed %}unreaded{% endif %}" href="{{ chat.get_absolute_url }}">
+                      <div class="reply-body">
+                              <img class="avatar-messages" src="{{ last_message.author.profile.icon.url }}"> <div class="list-group-item-heading"><b>{% if chat.type == 'C' %}{{ chat.name }}{% else %}{{ companion.username }}{% endif %}</b></div>
+                              <div class="pull-righttext-muted">{{ last_message.pub_date|utc }}</div>
+                          {% if companion != last_message.author %}
+                              <div class="attached-reply-body {% if not last_message.is_readed %}unreaded{% endif %}">{{ last_message.author }}: {{ last_message.message|truncatechars_html:"50"|safe|striptags }}</div>
+                          {% else %}
+                              <div class="attached-reply-body {% if not last_message.is_readed %}unreaded{% endif %}">ВЫ: {{ last_message.message|truncatechars_html:"50"|safe|striptags }}</div>
+                          {% endif %}
+                      </div>
+                  </a>
+              {% endwith %}
+      {% endfor %}
+    </div>
+  </body>
+    	<!-- Modal -->
+	<div class="modal" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<h5 class="modal-title" id="exampleModalLabel">Создание нового Чата</h5>
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="addChatForm" method="post">
+					{% for field in form %}
+						{% csrf_token %}
+						<div class="form-group">
+							{% if field.errors %}
+								<div class="alert alert-danger">
+									{{ field.errors }}
+								</div>
+							{% endif %}
+							{{ field.label }}
+							{{ field }}
+						</div>
+					{% endfor %}
+				</form>
+			</div>
+			<div class="modal-footer">
+			  <!--<button type="button" class="btn-secondary" data-bs-dismiss="modal">Закрыть</button>-->
+			  <button form="addChatForm" type="submit" class="btn-primary">Создать</button>
+			</div>
+	  </div>
+
+    <script>
+      const button_open = document.querySelector('.btn-primary-1');
+          const button_close = document.querySelector('.btn-secondary');
+          const form = document.querySelector('#addChatForm');
+          const popup = document.querySelector('.modal');
+    const dark = document.querySelector('.dark');
+          
+          function openForm() 
+          {
+            form.style.display = 'block';
+            popup.style.display = 'block';
+            dark.style.display = 'block';
+          };
+
+          button_close.addEventListener('click', () => {
+            form.style.display = 'none';
+            popup.style.display = 'none';
+            dark.style.display = 'none';
+          });
+</script>  
+{% endblock %}
+</html>

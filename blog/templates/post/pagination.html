@@ -1,0 +1,16 @@
+<head>
+    {% load static %}
+</head>
+<div style="text-align: center; margin: auto;">
+ <span class="step-links">
+  {% if page.has_previous %}
+      <a href="?page={{ page.previous_page_number }}" class="page-but"><--Назад</a>
+  {% endif %}
+    <span class="page-but">
+  Страница {{ page.number }} из {{ page.paginator.num_pages }}
+    </span>
+  {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}" class="page-but">Далее--></a>
+  {% endif %}  
+  </span>
+</div>

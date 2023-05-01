@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+<html>
+	{% block content %}
+	<head>
+		{% load static %}
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/css/post_list.css' %}">
+	</head>
+	<body>
+		<h1>Add a new group</h1>
+		<form id="form-container" method="POST">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="form-group">
+					{% if field.errors %}
+						<div class="alert-danger">
+							{{ field.errors }}
+						</div>
+					{% endif %}
+					{{ field.label }}
+					{{ field }}
+				</div>
+			{% endfor %}
+			{{formset.management_form}}
+			{% for f in formset %}
+			<div class="form">
+			{{f.as_p}}
+			</div>
+			{% endfor %}
+			<button id="add-form" type="button">Add</button>
+			<button id="remove-form" type="button">Remove</button>
+			<button type="submit">Create group</button>
+		</form>
+		
+	
+		<script>
+			let Form = document.querySelectorAll(".form")
+			let container = document.querySelector("#form-container")
+			let addButton = document.querySelector("#add-form")
+			let removeButton = document.querySelector("#remove-form")
+			let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
+	
+			let formNum = Form.length-1
+			addButton.addEventListener('click', addForm)
+			removeButton.addEventListener('click', removeForm)
+	
+			function addForm(e){
+				e.preventDefault()
+	
+				let newForm = Form[0].cloneNode(true)
+				let formRegex = RegExp(`form-(\\d){1}-`,'g')
+	
+				formNum++
+				newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`)
+				container.insertBefore(newForm, addButton)
+				
+				totalForms.setAttribute('value', `${formNum+1}`)
+			}
+
+			function removeForm(e){
+				e.preventDefault()
+	
+				let newForm = Form[0].cloneNode(true)
+				let formRegex = RegExp(`form-(\\d){1}-`,'g')
+	
+				formNum--
+				newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`)
+				container.insertBefore(newForm, removeButton)
+				
+				totalForms.setAttribute('value', `${formNum-1}`)
+			}
+		</script>
+	</body>
+	{% endblock %}
+</html>

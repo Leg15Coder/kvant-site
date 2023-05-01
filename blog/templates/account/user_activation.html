@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link href="{% static 'css/css/auth.css' %}" rel="stylesheet">
+</head>
+
+<div class="authCont">
+    <form id="add_form" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button form="add_form" type="submit" style="padding-top: 20px;">Подтвердить</button>
+    </form>
+</div>
+{% endblock %}

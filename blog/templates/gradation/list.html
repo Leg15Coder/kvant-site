@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+<html>
+	{% block content %}
+	<head>
+		{% load static %}
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/css/post_list.css' %}">
+	</head>
+	<body>
+		<div class="midd dark btn-secondary"></div>
+		<div class="midd">
+				{% for group in groups %}
+				<a href="{{ group.get_absolute_url }}" class="posts-links">
+					{{ group.name }}
+				</a>
+				{% endfor %}
+		
+			<footer>
+				{% include "../post/pagination.html" with page=posts %}
+			</footer>
+		</div>
+	</body>
+{% endblock %}
+</html>

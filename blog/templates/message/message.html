@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <link href="{% static 'css/css/message.css' %}" rel="stylesheet">  
+</head>
+<body>
+    {% url 'messages' message_item.author.username as the_user_url %}
+    {% load tz %}
+    <div class="list-group-item">
+        <div class="reply-body-mess">
+            <a href="{% url 'profile' user=message_item.author %}">
+                <img class="avatar-comment" src="{{ message_item.author.profile.icon.url }}">
+                <strong class="list-group-item-heading">{{ message_item.author.username }}</strong>
+            </a> 
+            <small class="pull-lefttext-muted">{{ message_item.pub_date }}</small>
+            <div class="message_item">{{ message_item.message|safe }}</div>
+        </div>
+    </div>
+</body>
+</html>
