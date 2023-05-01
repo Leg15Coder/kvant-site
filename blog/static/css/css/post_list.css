@@ -1,0 +1,124 @@
+input {
+    min-width: 120px;
+    border-radius: 16px;
+    box-shadow: 2px;
+    size: 16px;
+}
+
+label {
+    size: 20px;
+}
+
+button {
+    size: 21px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin-top: 12px;
+    padding: 3px;
+    background-color: orange;
+    transition: all .3s;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+.midd {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.dark {
+    position: absolute;
+    width: 55vw;
+    background-color: black;
+    opacity: 50%;
+    display: none;
+}
+
+.mar {
+    width: 80%;
+    border: 4px solid orange;
+    border-radius: 5px;
+    margin-top: 6px !important;
+    margin: auto;
+    color: black;
+    padding: 8px;
+    transition: all .6s;
+}
+
+.mar:hover {
+    border-color: blue;
+}
+
+.mar:hover .ins{
+    color: blue;
+}
+
+.ins {
+    transition: all .6s;
+    color: grey;
+}
+
+.p-item-0 {
+    font-size: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.p-item-2 {
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.p-item-1 {
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    max-width: 90%;
+    border-radius: 15px;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 9px;
+    position: absolute;
+    background-color: white;
+    top: 25px;
+    left: calc(50% - 183px);
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 27px;
+}
+
+.videourl {
+    min-width: 60%;
+    max-width: 95%;
+    height: auto;
+    margin: auto;
+    align-items: center;
+}
+
+.videourl-div {
+    margin: auto;
+}
+
+.backlink {
+    color: orangered;
+    font-size: 14px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.backlink:hover {
+    color: blueviolet;
+}

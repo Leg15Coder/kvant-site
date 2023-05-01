@@ -1,0 +1,175 @@
+input {
+    min-width: 120px;
+    border-radius: 16px;
+    box-shadow: 2px;
+    size: 16px;
+}
+
+label {
+    size: 20px;
+}
+
+button {
+    size: 21px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin-top: 12px;
+    padding: 3px;
+    background-color: orange;
+    transition: all .3s;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+.dark {
+    position: absolute;
+    width: 55vw;
+    background-color: black;
+    opacity: 50%;
+    display: none;
+    min-height: 100vh;
+}
+
+.modal {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    max-width: 90%;
+    border-radius: 15px;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 9px;
+    position: absolute;
+    background-color: white;
+    top: 25px;
+    left: calc(50% - 183px);
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 27px;
+}
+
+.reply-body {
+    background-color: white;
+    border-radius: 7px;
+    width: 90%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: 1px solid black;
+    color: black !important;
+}
+
+.panel {
+    text-align: center;
+    align-items: center;
+}
+
+.reply-body:hover {
+    background-color: whitesmoke;
+}
+
+.list-group-item-heading {
+    font-size: 22px;
+    text-align: left;
+    width: fit-content;
+    float: left;
+    margin: 3%;
+    color: black !important;
+}
+
+.pull-righttext-muted {
+    font-size: 11px;
+    text-align: right;
+    width: fit-content;
+    float: right;
+    margin: 3%;
+}
+
+.pull-lefttext-muted
+{
+    font-size: 9px;
+    text-align: right;
+    width: fit-content;
+    float: right;
+    margin: 3%;
+}
+
+.attached-reply-body {
+    font-size: 20px;
+    margin-top: 54px !important;
+    margin: 3%;
+    text-align: justify;
+}
+
+textarea {
+    max-height: 30px;
+    width: 70%;
+    border-radius: 5px;
+}
+
+.btn-sm {
+    float: right;
+    right: 5px;
+    position: relative;
+    bottom: 45px;
+}
+
+#message_form {
+    position: absolute;
+    bottom: 0;
+    width: 55vw;
+}
+
+.unreaded {
+    background-color: lightslategray;
+}
+
+.message_item {
+    margin-top: 40px !important;
+    margin: 10px;
+    text-align: justify;
+    font-size: 18px;
+    bottom: 0;
+    position: relative;
+}
+
+.reply-body-mess {
+    background-color: white;
+    border-radius: 7px;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: 1px solid black;
+    color: black !important;
+}
+
+.avatar-comment {
+    width: 32px;
+    height: 32px;
+    border: 1px solid black;
+    border-radius: 50%;
+    float: left;
+    left: 10px;
+    top: 12px;
+    position: relative;
+}
+
+.avatar-messages {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    position: relative;
+    float: left;
+}

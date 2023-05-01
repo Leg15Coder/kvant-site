@@ -1,0 +1,145 @@
+.cont {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.header{
+	background-image: url('../../img/1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	align-items: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 31vw;
+	min-height: 160px;
+	font-size: 50pt;
+	font-style: italic;
+	color: white;
+}
+
+.header1 {
+    padding-top: 13vw; 
+    margin: auto;
+    color: white !important;
+}
+
+.header1:hover {
+    color: white;
+}
+
+.promrobo {
+    background-image: url('../../img/descr/promrobo-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    height: 13.7vw;
+    transition: all .3s;
+    display: inline-block;
+}
+
+.promrobo:hover {
+    background-image: url('../../img/descr/promrobo.png');
+}
+
+.it {
+    background-image: url('../../img/descr/it-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.it:hover {
+    background-image: url('../../img/descr/it.png');
+}
+
+.vr {
+    background-image: url('../../img/descr/VR-AR-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.vr:hover {
+    background-image: url('../../img/descr/VR-AR.png');
+}
+
+.promdesign {
+    background-image: url('../../img/descr/promdesign-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.promdesign:hover {
+    background-image: url('../../img/descr/promdesign.png');
+}
+
+.haiteg {
+    background-image: url('../../img/descr/haiteg-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.haiteg:hover {
+    background-image: url('../../img/descr/haiteg.png');
+}
+
+.geo {
+    background-image: url('../../img/descr/geo-dark.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.geo:hover {
+    background-image: url('../../img/descr/geo.png');
+}
+
+.imedia {
+    background-image: url('../../img/descr/media-dark.jpg');
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 24%;
+    display: inline-block;
+    height: 13.7vw;
+    transition: all .3s;
+}
+
+.imedia:hover {
+    background-image: url('../../img/descr/media.jpg');
+}
+
+.text-info {
+    text-align: justify !important;
+    width: 95%;
+    text-align: center;
+    margin: auto;
+}
+
+table {
+    text-align: center;
+}
+
+h2 {
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+.profileavatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 32px;
+    top: 16px;
+    position: absolute;
+    border: 1px solid;
+}
+
+.username {
+    font-size: large;
+    float: auto;
+    margin-top: 48px;
+    margin-left: 190px;
+}
+
+.status {
+    color: gray;
+    float: auto;
+    margin-left: 190px;
+}

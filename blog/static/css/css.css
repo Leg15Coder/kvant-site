@@ -1,0 +1,155 @@
+body
+{
+	background-color: rgb(150, 150, 150);
+	margin: 0;
+	color: black;
+}
+
+img
+{
+	max-width: 100vw;
+	max-height: 600px;
+}
+
+.authCont
+{
+	width: 90%;
+	padding-left: 5%;
+	align-items: center;
+	text-align: center;
+}
+
+.mar{
+	align-items: center;
+	margin: 3%;
+	columns: 1;
+  }
+
+.product-item:hover{
+	border-color: #da6200;
+}
+
+.midd{
+	align-items: center;
+	text-align: center;
+}
+
+.product-item {
+	width: 100%;
+	height: auto;
+	text-align: left;
+	margin: 0 auto;
+	border: 2px solid #1200b6;
+	background: white;
+	font-family: "Open Sans";
+	transition: .3s ease-in;
+	float: left;
+	margin-bottom: 10px;
+	border-radius: 7px;
+  }
+
+  .p-item-2{
+	text-decoration-line: none;
+	color:black;
+	font-size: 15pt;
+	align-items: left;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+  }
+
+  .mes-head
+  {
+	  min-width: 100%;
+	  height: 60px;
+	  position: fixed;
+  }
+
+.p-item-img
+{
+	max-width: 45%;
+	max-height: 100px;
+}
+
+  .p-item-1
+  {
+	padding: 5px;
+	text-decoration-line: none;
+	color:rgb(65, 65, 65);
+	font-size: 14pt;
+	text-align: center;
+	align-items: center;
+  }
+
+  .p-item-0{
+	text-decoration-line: blink;
+	color: black;
+	font-size: 33pt;
+	text-align: center;
+  }
+
+  .ins {
+	font-size: 18px;
+	color: #1200b6;
+	display: block;
+	margin-bottom: 12px;
+	transition: .3s ease-in;
+	text-align: center;
+  }
+
+  .ins:hover{
+	color: #da6200;
+  }
+
+  .main-p
+  {
+	font-family: 'Lobster', cursive;
+	font-size: 16pt;
+  }
+
+  .page-but
+  {
+	font-size: 25px; 
+	font-weight: 200; 
+	color: #1200b6; 
+	text-decoration-line: none;
+	width: 8%;
+	transition: .3s ease-in;
+  }
+
+  .page-but:hover
+  {
+	color: #da6200;
+  }
+
+  .nav1
+  {
+	background: #00000059;
+	height: 60px;
+  }
+
+  ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: #fdc073;
+	font-size: 20px;
+	overflow: hidden;
+}
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 30px;
+}
+ul.mainmenu li.logo {margin: 0;}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: #fdc073;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #FDA83D;
+}
+
+.clear {clear: both;}

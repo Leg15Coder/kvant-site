@@ -1,0 +1,54 @@
+.body {
+    min-height: 102vh;
+    min-width: 56vw;
+    background-color: white;
+    position: absolute;
+    top: 0;
+}
+
+input {
+    min-width: 120px;
+    border-radius: 16px;
+    box-shadow: 2px;
+    size: 16px;
+}
+
+label {
+    size: 18px;
+}
+
+button {
+    size: 21px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin-top: 12px;
+    padding: 3px;
+    background-color: orange;
+}
+
+.error {
+    text-align: left;
+    transition: all .7s;
+}
+
+.error:hover {
+    color: red;
+}
+
+.field {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: fit-content;
+}
+
+.authCont {
+    border: 4px groove purple;
+    background-color: lightblue;
+    padding: 10px;
+    max-width: 65%;
+    margin-top: 6vh !important;
+    margin: auto;
+    text-align: center;
+}
